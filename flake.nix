@@ -26,13 +26,9 @@
             let
               rust-toolchain = pkgs.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml;
             in
-            pkgs.mkShell.override
-              {
-                stdenv = pkgs.stdenvAdapters.useMoldLinker pkgs.clangStdenv;
-              }
-              {
-                packages = [ rust-toolchain ];
-              };
+            pkgs.mkShell {
+              packages = [ rust-toolchain ];
+            };
         };
       };
 }
