@@ -8,7 +8,7 @@ jobs:
   lockfile:
     runs-on: ubuntu-latest
     steps:
-      - uses: TornaxO7/rust-template@v1-ci-actions
+      - uses: TornaxO7/rust-template@v2-ci-actions
       - name: Update flake.lock
         id: update-flake-lock
         run: nix flake update
