@@ -4,9 +4,7 @@ description: "Prepares the nix shell for the running CI"
 runs:
   using: composite
   steps:
-    - uses: actions/checkout@v4
-      with:
-        ref: ${{ github.head_ref }}
+    - uses: actions/checkout@v6
     - uses: cachix/install-nix-action@v30
       with:
         nix_path: nixpkgs=channel:nixos-unstable
